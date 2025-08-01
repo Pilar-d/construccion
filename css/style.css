@@ -19,21 +19,6 @@ body {
 }
 
 /* ----- Botones ----- */
-.btn {
-  border: none;
-  margin: 10px auto;
-  padding: 8px 12px;
-  background-color: #28a745;
-  color: white;
-  box-shadow: 0 0 3cap #000000;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.btn:hover {
-  border: 2px solid #ac8811;
-  background-color: #050504e3;
-  color: #ac8811;
-}
 
 /* Navbar */
 .navbar-toggler:hover {
@@ -95,11 +80,7 @@ p {
   margin: 10px auto;
   max-width: 90%;
 }
-.card:hover {
-  background-color: #e9debc;
-  box-shadow: 0 0 20px #383837;
-  color: #020201;
-}
+
 
 /* Alertas */
 .alert {
