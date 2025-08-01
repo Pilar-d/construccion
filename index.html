@@ -21,10 +21,9 @@
             padding-bottom: 80px; /* Espacio para el footer fijo */
             box-sizing: border-box;
         }
+        /* Carousel ajustado para mostrar bien las imágenes */
         .full-carousel-section {
             width: 100vw;
-            height: 100vh;
-            min-height: 100vh;
             margin: 0;
             padding: 0;
             display: flex;
@@ -32,26 +31,80 @@
             align-items: center;
             position: relative;
             overflow: hidden;
+            height: 400px;
+            min-height: 320px;
+            max-height: 500px;
+            background: #222;
         }
-        .carousel,
-        .carousel-inner,
-        .carousel-item,
-        .carousel-item img {
-            width: 100vw !important;
-            height: 100vh !important;
-            min-height: 100vh !important;
-            object-fit: cover !important;
+        .carousel {
+            width: 100vw;
+            height: 100%;
+        }
+        .carousel-inner {
+            width: 100vw;
+            height: 100%;
+        }
+        .carousel-item {
+            width: 100vw;
+            height: 100%;
         }
         .carousel-item img {
+            width: 100vw;
+            height: 100%;
+            object-fit: contain;
+            background: #222;
             display: block;
         }
-        @media (max-width: 768px) {
-            .carousel,
-            .carousel-inner,
-            .carousel-item,
+        @media (max-width: 992px) {
+            .full-carousel-section {
+                height: 250px;
+                min-height: 180px;
+                max-height: 300px;
+            }
             .carousel-item img {
-                height: 60vh !important;
-                min-height: 60vh !important;
+                height: 250px;
+            }
+        }
+        @media (max-width: 576px) {
+            .full-carousel-section {
+                height: 160px;
+                min-height: 120px;
+                max-height: 180px;
+            }
+            .carousel-item img {
+                height: 160px;
+            }
+        }
+        /* --- Responsive Cards --- */
+        @media (max-width: 767.98px) {
+            .card-img-top.fixed-size {
+                height: 180px !important;
+            }
+        }
+        @media (max-width: 575.98px) {
+            .card-img-top.fixed-size {
+                height: 140px !important;
+            }
+        }
+        /* --- Ajuste de imágenes en los modales para que no sobresalgan --- */
+        .modal-img-ajustada {
+            max-width: 100%;
+            max-height: 300px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media (max-width: 768px) {
+            .modal-img-ajustada {
+                max-height: 180px;
+            }
+        }
+        @media (max-width: 576px) {
+            .modal-img-ajustada {
+                max-height: 120px;
             }
         }
     </style>
@@ -84,70 +137,163 @@
     <br><br>
 <!--carousel con bootstrap informacion y imagenes sobre la empresa startup-->
     <section class="full-carousel-section">
-        <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+        <div id="carouselExampleRide" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="/imagenes/construccion.png" class="d-block w-100 h-100" alt="Imagen en construcción">
+                    <img src="/imagenes/construccion.png" class="d-block" alt="Imagen en construcción">
                 </div>
                 <div class="carousel-item">
-                    <img src="/imagenes/construccion1.png" class="d-block w-100 h-100" alt="Otra imagen">
+                    <img src="/imagenes/construccion1.png" class="d-block" alt="Otra imagen">
                 </div>
                 <div class="carousel-item">
-                    <img src="/imagenes/construccion2.png" class="d-block w-100 h-100" alt="Otra imagen">
+                    <img src="/imagenes/construccion2.png" class="d-block" alt="Otra imagen">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
+                <span class="visually-hidden">Anterior</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
+                <span class="visually-hidden">Siguiente</span>
             </button>
         </div>
     </section>
 
-<!-- Tres cards en la misma fila -->
+<!-- Tres cards en la misma fila, ahora responsivas -->
 <section class="container my-5">
-    <div class="row justify-content-center">
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <img src="/imagenes/card1.png" class="card-img-top" alt="Card 1">
-                <div class="card-body">
-                    <h5 class="card-title">Innovación Sostenible</h5>
-                    <p class="card-text">Desarrollamos soluciones ecológicas para la construcción moderna, priorizando el cuidado del medio ambiente.</p>
-                </div>
-                <div class="card-footer">
-                     <a href=""><input type="button" value="Ver Trabajos" class="btn btn-primary"></a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <img src="/imagenes/card2.png" class="card-img-top" alt="Card 2">
-                <div class="card-body">
-                    <h5 class="card-title">Equipo Profesional</h5>
-                    <p class="card-text">Contamos con un equipo multidisciplinario de expertos en ingeniería, arquitectura y sostenibilidad.</p>
-                </div>
-                <div class="card-footer">
-                     <a href=""><input type="button" value="Ver Trabajos" class="btn btn-primary"></a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <img src="/imagenes/card3.png" class="card-img-top" alt="Card 3">
-                <div class="card-body">
-                    <h5 class="card-title">Compromiso Social</h5>
-                    <p class="card-text">Trabajamos junto a comunidades para crear proyectos que generen impacto positivo y duradero.</p>
-                </div>
-                <div class="card-footer">
-                    <a href=""><input type="button" value="Ver Trabajos" class="btn btn-primary"></a>
-                </div>
-            </div>
-        </div>
-    </div>
+  <style>
+    .card-img-top.fixed-size {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: center;
+      transition: height 0.2s;
+    }
+    @media (max-width: 767.98px) {
+      .card-img-top.fixed-size {
+        height: 180px;
+      }
+    }
+    @media (max-width: 575.98px) {
+      .card-img-top.fixed-size {
+        height: 140px;
+      }
+    }
+    /* Responsive stacking for cards */
+    @media (max-width: 991.98px) {
+      .responsive-card-col {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+  </style>
+  <div class="row justify-content-center">
+      <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex responsive-card-col">
+          <div class="card h-100 w-100">
+              <img src="/imagenes/Trabajo1.png" class="card-img-top fixed-size" alt="Card 1">
+              <div class="card-body">
+                  <h5 class="card-title">Trabajo:</h5>
+                  <p class="card-text">Desarrollamos soluciones ecológicas para la construcción moderna, priorizando el cuidado del medio ambiente.</p>
+              </div>
+              <div class="card-footer">
+                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#popupCard1">Ver Trabajos</button>
+              </div>
+          </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex responsive-card-col">
+          <div class="card h-100 w-100">
+              <img src="/imagenes/Trabajo2.png" class="card-img-top fixed-size" alt="Card 2">
+              <div class="card-body">
+                  <h5 class="card-title">Trabajo:</h5>
+                  <p class="card-text">Contamos con un equipo multidisciplinario de expertos en ingeniería, arquitectura y sostenibilidad.</p>
+              </div>
+              <div class="card-footer">
+                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#popupCard2">Ver Trabajos</button>
+              </div>
+          </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex responsive-card-col">
+          <div class="card h-100 w-100">
+              <img src="/imagenes/Trabajo3.png" class="card-img-top fixed-size" alt="Card 3">
+              <div class="card-body">
+                  <h5 class="card-title">Trabajo:</h5>
+                  <p class="card-text">Trabajamos junto a comunidades para crear proyectos que generen impacto positivo y duradero.</p>
+              </div>
+              <div class="card-footer">
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#popupCard3">Ver Trabajos</button>
+              </div>
+          </div>
+      </div>
+  </div>
 </section>
+
+<!-- Modal para Card 1 -->
+<div class="modal fade" id="popupCard1" tabindex="-1" aria-labelledby="popupCard1Label" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="popupCard1Label">Imagenes del antes y el despues</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body d-flex justify-content-around align-items-center flex-wrap">
+        <div class="text-center">
+          <h6>Antes</h6>
+          <img src="/imagenes/antes.png" alt="Antes" class="img-fluid rounded mb-2 modal-img-ajustada">
+        </div>
+        <div class="text-center">
+          <h6>Después</h6>
+          <img src="/imagenes/despues.png" alt="Después" class="img-fluid rounded mb-2 modal-img-ajustada">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para Card 2 -->
+<div class="modal fade" id="popupCard2" tabindex="-1" aria-labelledby="popupCard2Label" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="popupCard2Label">Imagenes del antes y el despues</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body d-flex justify-content-around align-items-center flex-wrap">
+        <div class="text-center">
+          <h6>Antes</h6>
+          <img src="/imagenes/antes.png" alt="Antes" class="img-fluid rounded mb-2 modal-img-ajustada">
+        </div>
+        <div class="text-center">
+          <h6>Después</h6>
+          <img src="/imagenes/despues.png" alt="Después" class="img-fluid rounded mb-2 modal-img-ajustada">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para Card 3 -->
+<div class="modal fade" id="popupCard3" tabindex="-1" aria-labelledby="popupCard3Label" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="popupCard3Label">Imagenes del antes y el despues</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body d-flex justify-content-around align-items-center flex-wrap">
+        <div class="text-center">
+          <h6>Antes</h6>
+          <img src="/imagenes/antes.png" alt="Antes" class="img-fluid rounded mb-2 modal-img-ajustada">
+        </div>
+        <div class="text-center">
+          <h6>Después</h6>
+          <img src="/imagenes/despues.png" alt="Después" class="img-fluid rounded mb-2 modal-img-ajustada">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- NOTA: Asegúrate de tener Bootstrap JS y CSS incluidos en tu proyecto para que los modales funcionen correctamente. -->
 
 </body>
 <footer class="bg-dark text-white text-center fixed-bottom py-3">

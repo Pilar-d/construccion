@@ -32,7 +32,7 @@ footer {
   margin-top: 10px;
   padding: 20px 4px;
   width: 100%;
-  background-color: #ac8811;
+  background-color: #00000075;
   justify-content: center;
   align-items: center;
 }
@@ -86,17 +86,11 @@ p {
 .alert {
   padding: 40px;
   margin: 30px auto;
-  background-color: #020201;
-  color: #ac8811;
+  
   border: none;
   border-radius: 20px;
   transition: 0.5s;
-  max-width: 90%;
-}
-.alert:hover {
-  box-shadow: 0 0 10px #585855d7;
-  background-color: #ac8811;
-  color: #020201;
+  max-width: 100%;
 }
 
 .btn-alert {
