@@ -23,7 +23,7 @@ whatsappForm.onsubmit = function(e) {
   e.preventDefault();
   const nombre = document.getElementById("waNombre").value.trim();
   const mensaje = document.getElementById("waMensaje").value.trim();
-  const telefono = "56972646462"; // Cambia por tu número de WhatsApp sin el +
+  const telefono = "56975683915"; // Cambia por tu número de WhatsApp sin el +
   const texto = encodeURIComponent(`Hola, soy ${nombre}. ${mensaje}`);
   window.open(`https://wa.me/${telefono}?text=${texto}`, "_blank");
 };
