@@ -72,7 +72,7 @@ p {
 .card {
   border: none;
   box-shadow: 0 0 10px #353534da;
-  color: #ac8811;
+  color: #000000;
   box-sizing: content-box;
   border-radius: 5px;
   transition: 0.5s;
@@ -122,7 +122,7 @@ p {
 .c-text h1 {
   font-size: 2.5em;
   margin-bottom: 25px;
-  color: #ac8811;
+  color: #000000;
 }
 .c-text p {
   font-size: 1.1em;
